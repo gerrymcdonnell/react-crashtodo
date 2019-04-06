@@ -8,17 +8,17 @@ class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: 11,
         title: 'gdfg 1 fdgdfgfdg',
         completed: false
       },
       {
-        id: 2,
+        id: 12,
         title: 'gdfg 2 fdgdfgfdg',
         completed: false
       },
       {
-        id: 3,
+        id: 13,
         title: 'This task is comepleted',
         completed: true
       }
@@ -26,8 +26,19 @@ class App extends Component {
   }
 
   //arrow function version
-  markComplete=(id)=>{
-    console.log(id)
+  markComplete = (id) => {
+    console.log('id is', id)
+
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          //toggle the completed varable
+          todo.completed = !todo.completed
+        }
+        return todo;
+      })
+    })
+
   }
 
   render() {
@@ -40,10 +51,10 @@ class App extends Component {
         <h1> My App</h1>
         <h3>Todos are below</h3>
         {/* {pass todos to component} */}
-        <Todos 
-          todos={this.state.todos} 
-          markComplete={this.markComplete}          
-          />
+        <Todos
+          todos={this.state.todos}
+          markComplete={this.markComplete}
+        />
       </div>
     );
   }
