@@ -47,16 +47,22 @@ class App extends Component {
     })
   }
 
+
+  addTodo = (title) => {
+    console.log(title);
+  }
+
+
   render() {
 
     //print out the state
     console.log(this.state.todos)
 
     return (
-      <div className="App">       
-       <div className="container">
-        <Header />
-          <AddTodo />
+      <div className="App">
+        <div className="container">
+          <Header />
+          <AddTodo addTodo={this.addTodo} />
           <h3>Todos are below</h3>
           {/* {pass todos to component} */}
           <Todos
@@ -64,7 +70,7 @@ class App extends Component {
             markComplete={this.markComplete}
             delTodo={this.delTodo}
           />
-       </div>        
+        </div>
       </div>
     );
   }
