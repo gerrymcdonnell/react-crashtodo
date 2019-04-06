@@ -1,21 +1,24 @@
+//uuid
+import uuid from 'uuid';
+
 const todos = [
   {
-    id: 11,
+    id: uuid.v4(),
     title: 'gdfg 1 fdgdfgfdg',
     completed: false
   },
   {
-    id: 12,
+    id: uuid.v4(),
     title: 'gdfg 2 fdgdfgfdg',
     completed: false
   },
   {
-    id: 13,
+    id: uuid.v4(),
     title: 'This task is comepleted',
     completed: true
   },
   {
-    id: 14,
+    id: uuid.v4(),
     title: 'Fourth Task',
     completed: false
   }
