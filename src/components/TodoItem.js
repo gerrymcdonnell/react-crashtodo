@@ -5,7 +5,7 @@ class TodoItem extends Component {
     render() {
         return (
             <div>
-                <p>hello</p>
+                <p>{this.props.todo.title}</p>
             </div>
         );
     }

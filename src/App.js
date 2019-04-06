@@ -34,6 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1> My App</h1>
+        <h3>Todos are below</h3>
         {/* {pass todos to component} */}
         <Todos todos={this.state.todos} />
       </div>

@@ -3,11 +3,12 @@ import TodoItem from './TodoItem'
 
 
 class Todos extends Component {
-  render() {
-    return this.props.todos.map((todo)=>(
-        <h3 key={todo.id}>{todo.title}</h3>
-    ))
-  }
+    render() {
+        return this.props.todos.map((todo) => (
+            // pass todo as a prop to todo item component
+            <TodoItem key={todo.id} todo={todo} />
+        ));
+    }
 }
 
 export default Todos;
