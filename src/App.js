@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
-
 import { getTodos } from './services/fakeTodosService';
 import Header from './layout/header'
 
 //uuid
 import uuid from 'uuid';
+
+// ended video tutorial on 1hr:15
+// https://youtu.be/sBws8MSXN7A?t=4542
 
 
 class App extends Component {
