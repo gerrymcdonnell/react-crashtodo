@@ -16,16 +16,22 @@ class TodoItem extends Component {
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
-            // turnary operator version
+            // turnary operator version. if completed then use linethrough else none
             textDecoration: this.props.todo.completed ? 'line-through' : 'none'
         }
 
     }
 
+    markComplete(e){
+        console.log(this.props)
+    }
+
     render() {
         return (
             <div style={this.getStyle()}>
-                <p>{this.props.todo.title}</p>
+                <p>
+                    <input type="checkbox" onChange={this.markComplete.bind(this)} />{' '}
+                    {this.props.todo.title}</p>
             </div>
         );
     }
