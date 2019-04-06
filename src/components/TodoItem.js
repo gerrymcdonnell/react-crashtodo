@@ -13,7 +13,7 @@ class TodoItem extends Component {
 }
 
 //proptypes i.e classname
-TodoItem.prototype = {
+TodoItem.proptype = {
     todos: PropTypes.object.isRequired
 }
 

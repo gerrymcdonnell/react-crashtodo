@@ -12,7 +12,7 @@ class Todos extends Component {
 }
 
 //proptypes fro the class ClassName.proptypes
-Todos.prototype = {
+Todos.proptype = {
     todos: PropTypes.array.isRequired
 }
 
