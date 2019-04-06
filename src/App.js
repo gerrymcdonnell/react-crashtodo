@@ -19,8 +19,8 @@ class App extends Component {
       },
       {
         id: 3,
-        title: 'gdfg 3 fdgdfgfdg',
-        completed: false
+        title: 'This task is comepleted',
+        completed: true
       }
     ]
   }
