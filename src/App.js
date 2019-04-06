@@ -26,8 +26,11 @@ class App extends Component {
   }
 
   //arrow function version
+  // when we click on the the todo item we need to get the id of the item and 
+  // then set the state of the item that was clicked to reflect our action
   markComplete = (id) => {
-    console.log('id is', id)
+
+    console.log('id of item is', id)
 
     this.setState({
       todos: this.state.todos.map(todo => {
