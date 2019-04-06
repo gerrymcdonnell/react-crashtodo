@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
+
 import { getTodos } from './services/fakeTodosService';
+import Header from './layout/header'
+
 
 class App extends Component {
 
@@ -49,15 +53,18 @@ class App extends Component {
     console.log(this.state.todos)
 
     return (
-      <div className="App">
-        <h1> My App</h1>
-        <h3>Todos are below</h3>
-        {/* {pass todos to component} */}
-        <Todos
-          todos={this.state.todos}
-          markComplete={this.markComplete}
-          delTodo={this.delTodo}
-        />
+      <div className="App">       
+       <div className="container">
+        <Header />
+          <AddTodo />
+          <h3>Todos are below</h3>
+          {/* {pass todos to component} */}
+          <Todos
+            todos={this.state.todos}
+            markComplete={this.markComplete}
+            delTodo={this.delTodo}
+          />
+       </div>        
       </div>
     );
   }
