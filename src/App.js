@@ -44,6 +44,16 @@ class App extends Component {
 
   }
 
+  //delete todo
+  delTodo = (id) => {
+    console.log(id)
+
+    //use filter function of array
+    this.setState({
+      todos:[...this.state.todos.filter(todo=>todo.id!==id)]
+    })
+  }
+
   render() {
 
     //print out the state
@@ -57,6 +67,7 @@ class App extends Component {
         <Todos
           todos={this.state.todos}
           markComplete={this.markComplete}
+          delTodo={this.delTodo}
         />
       </div>
     );
