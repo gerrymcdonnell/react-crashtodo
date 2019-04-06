@@ -2,27 +2,12 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Todos from './components/Todos';
+import { getTodos } from './services/fakeTodosService';
 
 class App extends Component {
 
   state = {
-    todos: [
-      {
-        id: 11,
-        title: 'gdfg 1 fdgdfgfdg',
-        completed: false
-      },
-      {
-        id: 12,
-        title: 'gdfg 2 fdgdfgfdg',
-        completed: false
-      },
-      {
-        id: 13,
-        title: 'This task is comepleted',
-        completed: true
-      }
-    ]
+    todos: getTodos()
   }
 
   //arrow function version
@@ -46,11 +31,15 @@ class App extends Component {
 
   //delete todo
   delTodo = (id) => {
-    console.log(id)
+    console.log('delete id ', id)
 
-    //use filter function of array
+    //Complecated
+    //use spread operator to copy the existing array and then apply a filter so that
+    //the id of items in the array is not equal to the id being passed in
     this.setState({
-      todos:[...this.state.todos.filter(todo=>todo.id!==id)]
+      todos: [...this.state.todos.filter(
+        todo => todo.id !== id)
+      ]
     })
   }
 
