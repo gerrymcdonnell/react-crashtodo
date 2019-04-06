@@ -50,6 +50,15 @@ class App extends Component {
 
   addTodo = (title) => {
     console.log(title);
+
+    const newTodo = {
+      id: 66,
+      title: title,
+      completed: false
+    }
+
+    //use spread operator to copy array and add new object
+    this.setState({ todos: [...this.state.todos, newTodo] })
   }
 
 
