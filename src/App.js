@@ -7,7 +7,8 @@ import AddTodo from './components/AddTodo';
 import { getTodos } from './services/fakeTodosService';
 import Header from './layout/header'
 
-
+//uuid
+import uuid from 'uuid';
 
 
 class App extends Component {
@@ -54,7 +55,7 @@ class App extends Component {
     console.log(title);
 
     const newTodo = {
-      id: 66,
+      id: uuid.v4(),
       title: title,
       completed: false
     }
