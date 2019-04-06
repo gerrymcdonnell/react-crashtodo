@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 class Todos extends Component {
 
-    //arrow function version
-    markComplete=(e)=>{
-        console.log('Todos componet fnction call',this.props)
-    }
 
     render() {
         return this.props.todos.map((todo) => (
             // pass todo as a prop to todo item component
-            <TodoItem key={todo.id} todo={todo} markComplete={this.markComplete}/>
+            <TodoItem
+                key={todo.id}
+                todo={todo}
+                markComplete={this.props.markComplete}
+            />
         ));
     }
 }

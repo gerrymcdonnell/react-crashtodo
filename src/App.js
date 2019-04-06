@@ -25,6 +25,10 @@ class App extends Component {
     ]
   }
 
+  //arrow function version
+  markComplete=(id)=>{
+    console.log(id)
+  }
 
   render() {
 
@@ -36,7 +40,10 @@ class App extends Component {
         <h1> My App</h1>
         <h3>Todos are below</h3>
         {/* {pass todos to component} */}
-        <Todos todos={this.state.todos} />
+        <Todos 
+          todos={this.state.todos} 
+          markComplete={this.markComplete}          
+          />
       </div>
     );
   }
