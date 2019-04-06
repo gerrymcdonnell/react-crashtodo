@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
         <h1> My App</h1>
         {/* {pass todos to component} */}
-        <Todos myprop1="prop1" todos={this.state.todos} />
+        <Todos todos={this.state.todos} />
       </div>
     );
   }
