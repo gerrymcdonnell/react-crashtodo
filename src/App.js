@@ -12,12 +12,11 @@ import About from './components/pages/about';
 //import route component
 import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
 
-//uuid
-import uuid from 'uuid';
 import axios from 'axios';
 
+//uuid
+//import uuid from 'uuid';
 
-// ended video tutorial on 1hr:15
 // https://youtu.be/sBws8MSXN7A?t=4542
 
 
@@ -72,14 +71,21 @@ class App extends Component {
   addTodo = (title) => {
     console.log(title);
 
-    const newTodo = {
+    /*const newTodo = {
       id: uuid.v4(),
       title: title,
       completed: false
-    }
+    }*/
+
+    axios.post('https://jsonplaceholder.typicode.com/todos',
+      {
+        title,
+        completed:false
+      }
+    ).then(res=>this.setState({ todos: [...this.state.todos, res.data] }))
 
     //use spread operator to copy array and add new object
-    this.setState({ todos: [...this.state.todos, newTodo] })
+    
   }
 
 
