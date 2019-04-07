@@ -30,8 +30,8 @@ class App extends Component {
 
   componentDidMount(){
     //axios returns a promise
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-    .then(res=>console.log(res.data))
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res=>this.setState({todos:res.data}))
   }
 
 
