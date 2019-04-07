@@ -47,7 +47,8 @@ class TodoItem extends Component {
                     {title}
                     <button 
                     onClick={this.props.delTodo.bind(this,id)}
-                    style={btnStyle}>X</button>
+                    style={btnStyle}
+                    className="btn btn-danger">X</button>
                 </p>
             </div>
         );

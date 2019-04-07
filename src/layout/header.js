@@ -16,7 +16,6 @@ const headerStyle = {
     background: '#333',
     color: '#fff',
     textalign: 'center'
-
 }
 
 export default Header;
