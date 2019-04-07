@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-//vid 94 type first letter of import i.e rrd then tab
-import { BrowserRouter } from 'react-router-dom';
+//import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
-    <BrowserRouter>
-        <App />, 
-    </BrowserRouter>,
+ReactDOM.render(    
+        <App />,     
 document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 
 import './App.css';
+
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import { getTodos } from './services/fakeTodosService';
 import NotFound from "./components/notFound";
 import Header from './layout/header'
+import About from './components/pages/about';
 
 //import route component
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
 
 //uuid
 import uuid from 'uuid';
+
 
 // ended video tutorial on 1hr:15
 // https://youtu.be/sBws8MSXN7A?t=4542
@@ -77,28 +80,33 @@ class App extends Component {
     console.log(this.state.todos)
 
     return (
-      <div className="App">
-        <div className="container">
+      <BrowserRouter>
 
-        <Switch>   
-            <Route path="/not-found" component={NotFound} />
-            <Redirect from="/" exact to="/movies" />
-            <Redirect to="/not-found" />
-        </Switch>
-
-
-
+        <div className="App">
+          <div className="container">
           <Header />
-          <AddTodo addTodo={this.addTodo} />
-          <h3>Todos are below</h3>
-          {/* {pass todos to component} */}
-          <Todos
-            todos={this.state.todos}
-            markComplete={this.markComplete}
-            delTodo={this.delTodo}
-          />
+          {/* {router component} */}
+              <Route exact path="/" render={props=>(
+                <React.Fragment>
+                    <AddTodo addTodo={this.addTodo} />
+                    <h3>Todos are below</h3>
+                    {/* {pass todos to component} */}
+                    <Todos
+                      todos={this.state.todos}
+                      markComplete={this.markComplete}
+                      delTodo={this.delTodo}
+                    />
+                </React.Fragment>
+              ) }/>
+
+              <Route path="/about" component={About}/>
+
+            
+            
+          </div>
         </div>
-      </div>
+
+        </BrowserRouter>
     );
   }
 }
