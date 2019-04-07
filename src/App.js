@@ -14,6 +14,7 @@ import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
 
 //uuid
 import uuid from 'uuid';
+import axios from 'axios';
 
 
 // ended video tutorial on 1hr:15
@@ -23,8 +24,16 @@ import uuid from 'uuid';
 class App extends Component {
 
   state = {
-    todos: getTodos()
+    todos: [] /** getTodos()*/
   }
+
+
+  componentDidMount(){
+    //axios returns a promise
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+    .then(res=>console.log(res.data))
+  }
+
 
   //arrow function version
   // when we click on the the todo item we need to get the id of the item and 
