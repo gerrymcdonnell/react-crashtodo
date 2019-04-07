@@ -60,11 +60,16 @@ class App extends Component {
     //Complecated
     //use spread operator to copy the existing array and then apply a filter so that
     //the id of items in the array is not equal to the id being passed in
-    this.setState({
-      todos: [...this.state.todos.filter(
-        todo => todo.id !== id)
-      ]
-    })
+    
+
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res=>
+        this.setState({
+          todos: [...this.state.todos.filter(
+            todo => todo.id !== id)
+          ]
+        })
+      )
   }
 
 
@@ -83,6 +88,7 @@ class App extends Component {
         completed:false
       }
     ).then(res=>this.setState({ todos: [...this.state.todos, res.data] }))
+
 
     //use spread operator to copy array and add new object
     
