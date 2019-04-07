@@ -4,7 +4,11 @@ import './App.css';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import { getTodos } from './services/fakeTodosService';
+import NotFound from "./components/notFound";
 import Header from './layout/header'
+
+//import route component
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 //uuid
 import uuid from 'uuid';
@@ -75,6 +79,15 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
+
+        <Switch>   
+            <Route path="/not-found" component={NotFound} />
+            <Redirect from="/" exact to="/movies" />
+            <Redirect to="/not-found" />
+        </Switch>
+
+
+
           <Header />
           <AddTodo addTodo={this.addTodo} />
           <h3>Todos are below</h3>
